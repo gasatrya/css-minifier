@@ -1,10 +1,10 @@
-const Path = require('path');
-const Webpack = require('webpack');
-const { merge } = require('webpack-merge');
-const ESLintPlugin = require('eslint-webpack-plugin');
-const StylelintPlugin = require('stylelint-webpack-plugin');
+const Path = require('path')
+const Webpack = require('webpack')
+const { merge } = require('webpack-merge')
+const ESLintPlugin = require('eslint-webpack-plugin')
+const StylelintPlugin = require('stylelint-webpack-plugin')
 
-const common = require('./webpack.common.js');
+const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
   target: 'web',
@@ -60,4 +60,4 @@ module.exports = merge(common, {
       },
     ],
   },
-});
+})

@@ -23,4 +23,4 @@ npm run build
 ### Thanks to:
 
 - Webpack starter: [https://github.com/wbkd/webpack-starter](https://github.com/wbkd/webpack-starter)
-- CSS Minifier API: [https://www.toptal.com/developers/cssminifier/documentation](https://www.toptal.com/developers/cssminifier/documentation)
+- Clean CSS: [https://github.com/clean-css/clean-css](https://github.com/clean-css/clean-css)

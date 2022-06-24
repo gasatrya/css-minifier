@@ -1,7 +1,8 @@
-const Path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Path = require('path')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -25,10 +26,26 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: Path.resolve(__dirname, '../src/index.html'),
     }),
+    new Webpack.ProvidePlugin({
+      process: 'process/browser',
+    }),
+    new Webpack.ProvidePlugin({
+      Buffer: ['buffer', 'Buffer'],
+    }),
   ],
   resolve: {
     alias: {
       '~': Path.resolve(__dirname, '../src'),
+    },
+    fallback: {
+      os: require.resolve('os-browserify/browser'),
+      path: require.resolve('path-browserify'),
+      http: require.resolve('stream-http'),
+      https: require.resolve('https-browserify'),
+      fs: false,
+      buffer: require.resolve('buffer/'),
+      util: require.resolve('util/'),
+      url: require.resolve('url/'),
     },
   },
   module: {
@@ -46,10 +63,6 @@ module.exports = {
         test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
         type: 'asset',
       },
-      {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader',
-      },
     ],
   },
-};
+}
