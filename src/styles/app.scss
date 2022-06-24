@@ -1,0 +1,108 @@
+@import "bootstrap";
+
+:root {
+  --accent-color: #6d68ad;
+  --white-color: #fff;
+  --font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: Inter, sans-serif;
+  font-size: 1.2rem;
+}
+
+.minifier {
+  &__header {
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: 567px) {
+      height: 50px;
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    margin-bottom: 10px;
+
+    @media (min-width: 567px) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__github {
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 567px) {
+      justify-content: flex-end;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: var(--white-color);
+      font-size: 14px;
+      text-decoration: none;
+
+      &:not(:last-of-type) {
+        margin-right: 14px;
+      }
+    }
+
+    svg {
+      width: 24px;
+      margin-right: 5px;
+    }
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+  }
+}
+
+.h3 {
+  font-weight: 700;
+}
+
+label {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:not(:disabled, .disabled):active {
+  background-color: rgb(109 104 173 / 80%);
+  border-color: var(--accent-color);
+}
+
+.btn-copy,
+.btn-clear {
+  display: none;
+}
+
+#invalid {
+  display: none;
+  color: #d54552;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: none;
+}
