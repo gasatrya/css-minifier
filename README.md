@@ -2,6 +2,10 @@
 
 A simple CSS minifier to removes the spacing, indentation, newlines, and comments.
 
+**TO DO**
+
+- [ ] Stop invalid message loop
+
 ### Installation
 
 ```sh
