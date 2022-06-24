@@ -26,7 +26,6 @@ const minifyCSS = async () => {
 
   try {
     const response = await axios.request(options)
-    console.log(response)
 
     input.value = response.data
     invalid.textContent = ''
@@ -35,7 +34,6 @@ const minifyCSS = async () => {
     copyBtn.style.display = 'inline-block'
     clearBtn.style.display = 'inline-block'
   } catch (error) {
-    console.log(error)
     const errorMsg = JSON.parse(error.request.responseText)
 
     input.classList.add('is-invalid')
